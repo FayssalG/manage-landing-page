@@ -1,0 +1,89 @@
+
+.list{
+    display: flex ;
+    flex-direction: column;
+    gap: 2.5rem;
+    margin-top: 2.5rem;
+    li{
+    
+        h4{
+            font-size: .85rem;
+            line-height: 2.4rem;
+            color: var(--dark-blue);
+            margin-bottom: 1rem;
+            background-color: var(--very-pale-red);
+            border-radius: 40px;
+            height: 2.4rem;
+            display: flex;
+            gap: .4rem;
+            span{
+                color: white;
+                height: 100%;
+                min-width: .7rem;
+                width: 4rem;
+                border-radius: 40px;
+                background-color: var(--bright-red);
+            }
+        }
+
+        p{
+            text-align: left;
+        }
+    }
+}
+
+
+@media (min-width:900px){
+    .presentation-section{
+        position: relative;
+        .wrapper{
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2.5rem;
+            .list{
+                margin-top: 0;
+                grid-column: 2 / span 1;
+                grid-row: 1/span 2; 
+            }
+            
+            .content{
+                text-align: left;
+                max-width: 400px;
+            }
+        }
+    }
+
+    .presentation-section::after{
+        content: '';
+        position: absolute;
+        width: 650px;
+        height: 650px;
+        left: -25vw;
+        bottom:   -50vh;
+        z-index: -1;
+        background-image: url('../../Assets/bg-tablet-pattern.svg')  ;
+        background-size: cover;
+        background-position: top;
+        background-repeat: no-repeat;   
+    }
+
+    .list{
+     
+        li{
+            position: relative;
+            h4{
+                background-color: unset;
+                
+                span{
+                    max-height: 2.5rem;
+                }
+ 
+            }
+            
+            p{
+                margin-left: 4.4rem;
+            }
+        }    
+    }
+    
+}

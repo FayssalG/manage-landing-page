@@ -1,0 +1,114 @@
+footer{
+    position: relative;
+    background-color: var(--very-dark-blue);
+    .footer-wrapper{
+        display: grid;
+        justify-content: center;
+        gap: 2rem;
+        padding: 2rem 0;
+    }   
+}
+
+.footer-wrapper{
+    ul{
+        margin-left: 2rem;
+        font-size: .7rem;
+        color: white;
+        height: 7rem;
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .input-container{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        gap: .5rem ;
+        input[type=submit]{
+            font-family: inherit;
+            border: none;
+            cursor: pointer;
+        }
+        input[type=email]{
+            padding: 0 1rem;
+            font-size: .7rem;
+            height: 2rem;
+            border-radius: 40px;
+            min-width:10rem ;
+            border: none;
+        }
+    }
+
+    .social-icons{
+        height: fit-content;
+        display: flex;
+        justify-content: space-evenly;
+        gap: .5rem;
+        img{
+            width: 1.5rem;
+        }
+    }
+
+    .footer-logo{
+        justify-self: center;
+        img{
+            width: 7rem;
+        }
+    }
+
+    p{
+
+        margin-bottom: 1rem;
+        text-align: center;
+        font-size: .5rem;
+        color: var(--dark-grayish-blue);
+    }
+}
+
+footer::after{
+    content: '';
+    position: absolute;
+    z-index: -1;
+    width: 200vw;
+    left: -100vw;
+    top: 0;
+    height: 100%;
+    background-color: var(--very-dark-blue);
+
+}
+
+
+@media (min-width:900px){
+    .footer-wrapper{
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: 0;
+        .footer-logo{
+            justify-self: start;
+            grid-row: 1/span 1;
+        }
+
+        .social-icons{
+            justify-self: start;
+            grid-column: 1/span 1;
+        }
+
+        ul{
+            grid-column: 2/span 1;
+            grid-row: 1/span 2;
+        }
+
+        .input-container{
+            justify-self: end;
+            grid-column: 3/ span 1;
+        }
+
+        p{
+            justify-self: end;
+            grid-column: 3/span 1;
+        }
+    }
+}
